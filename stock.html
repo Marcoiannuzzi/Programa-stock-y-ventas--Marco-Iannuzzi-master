@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>Stock</title>
+</head>
+<body>
+    <div class="conteinerCompras">
+        <div class="imgVentas">
+            <a href="menu.html"><img src="./Imagenes/logo.png" alt=""></a> 
+        </div>
+
+        <div class="tituloVentas">
+            <h1>Stock Inicial</h1>
+            <input type="text" id="productos" placeholder="Ingresa la palabra clave `iniciar`.">
+        </div> 
+        <form id="form">
+            <div class="formConteiner">
+                <input type="text" id="codigoProductoStock" placeholder="Ingrese el codigo del produto">
+                <input type="text" id="descripcionProductoStock" placeholder="Describa el producto">
+                <input type="text" id="cantidadProdStock" placeholder="Ingrese la cantidad comprada">
+                <input type="text" id="precioProductoStock"placeholder="Ingrese el precio del producto">
+            </div>
+            
+            <input type="submit" value="Cargar Producto" class="botonCompras" id="botonCargar">
+
+            
+        </form>
+
+        <div class="formConteiner">
+            <input type="text" name="" id="codigoABorrar" placeholder="Ingrese el codigo a eliminar">
+            <button class="boton borrar" id="borrarProducto">Eliminar Producto</button>
+        </div>
+
+            <ul class= "listaProductosComprados" id="listaProductosStock">
+
+            </ul>
+
+            <button class="boton" id="mostrarProductos">Mostrar Stock</button>
+
+            <ul class= "listaProductosComprados" id="monstrarStock">
+
+            </ul>
+      
+
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>   
+    <script src="./js/stock.js"></script>
+</body>
+</html>

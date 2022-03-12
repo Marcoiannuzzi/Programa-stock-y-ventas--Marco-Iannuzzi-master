@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>Control de Stock y Ventas</title>
+</head>
+<body>
+    <div class="conteinerVentas" id="inicioVentas">
+
+        <div class="imgVentas">
+           <a href="menu.html"><img src="./Imagenes/logo.png" alt=""></a> 
+        </div>
+
+        <div class="tituloVentas">
+            <h1>Tus Ventas</h1>
+        </div> 
+
+        <div class="ingresoDeVentas">
+            <div class="conteinerUno">
+                <h4 class="tituloCuotas" id="seccionProductos">Productos</h4>
+
+                <form class = "formularioVentas" id="formularioVentas"> 
+                    <label for="Codigo">Codigo<input type="text" name="Codigo" id="codigoProducto" placeholder="Ingresa el código del producto"></label>
+                    <div class="formularioVentasConteiner">
+                        
+                        <label for="cantidad">Cantidad<input type="number" name="cantidad" id="cantidadProducto" required placeholder="Ingresa la cantidad vendida"></label>
+                        <label for="Precio">Precio<input type="number" name="Precio" id="precio" required placeholder="Ingresa el precio del producto"></label>
+                    </div>
+                    <input type="submit" value="Agregar Productos" class="boton" id="botonAgregarProductos">
+                    <button id="botonBorrar" class="boton borrar">Borrar</button>
+                </form>
+                <div class="conteinerDetalle" id="conteinerDetalle">
+                    <h4 class="tituloCuotas">Detalle de Venta</h4>
+                    <p class="pDetalle" id="detalleVentas"></p>
+                    <p class="pDetalle" id="psuma"></p>                
+                </div>
+            </div>
+
+            <div class="conteinerDos">
+                <h4 class="tituloCuotas" id="seccionFormaDePago">Forma de pago</h4>
+            
+                    <form class="conteinerFormaDePago" name="">
+
+                        <div class="tarjetaEfectivo">
+                            <label for="tajeta"><input  type="radio" name="tarjeta/efectivo" id="tarjeta">Tarjeta</label>
+                            <label for="efectivo"><input  type="radio" name="tarjeta/efectivo" id="efectivo">Efectivo</label>
+                        </div>
+
+                        <h4 class="tituloCuotas">Cuotas</h4>
+
+                        <div class="conteinerCuotas">
+                            <label for="tres"><input  type="radio" name="cuotas" id="tres">Tres</label>
+                            <label for="seis"><input  type="radio" name="cuotas" id="seis">Seis</label>
+                            <label for="nueve"><input  type="radio" name="cuotas" id="nueve">Nueve</label>
+                            <label for="doce"><input  type="radio" name="cuotas" id="doce">Doce</label>
+                        </div>
+                        <div class="conteinerButtons">
+                            <button class="boton borrar" id="reset">Reset</button>
+                            <button id="finalizarBoton" class="boton">Finalizar</button>
+                        </div>
+                    </form>
+
+                <div class="conteinerDetalle" id="totalVentas">
+                    <h4 class="tituloCuotas">Final de operación</h4>
+                    <p id="detalleFinal"></p>
+                    <p id="detalleFinalCuotas"></p>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/ventas.js"></script>
+</body>
+</html>

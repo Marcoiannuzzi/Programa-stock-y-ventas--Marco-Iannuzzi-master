@@ -1,0 +1,337 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: black;
+}
+
+.conteinerIndex{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.conteinerImg{
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 100px;
+    border-radius: 50%;
+    border-style: outset;
+    border-color: green;
+}
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+.conteinerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+input{
+    color: #C1C1C1;
+    font-size: 12px;
+    background-color: #333333;
+    border-radius: 12px;
+    width: 200px;
+    margin:10px;
+    height: 30px;
+}
+
+.boton {
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    background-color: #1E90FF;
+    color: aliceblue;
+    border-radius: 12px;
+    width: 200px;
+    margin: 10px 20px;
+    height: 40px;
+}
+
+h1 {
+    font-family: 'Inter', sans-serif;
+    color: aliceblue;
+    font-size: 40px;
+}
+
+h2,
+h3,
+h4{
+    font-family: 'Inter', sans-serif;
+    color: aliceblue;
+}
+
+a{
+    font-family: 'Inter', sans-serif;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.verde{
+    color:green;
+}
+
+p{
+    color: aliceblue;
+    margin: 20px auto;
+    text-align: center;
+}
+
+li,
+p{
+    color: #C1C1C1;
+}
+
+/*
+Estilos de Menu.HTML
+*/
+
+.conteinerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.saludoMenu{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.saludo,
+.nombreUsuario {
+    padding: 0px;
+    margin: 15px;
+    font-size: 65px;
+    text-align: start;
+}
+
+.tituloMenu h3{
+    margin: 40px;
+    font-size: 35px;
+}
+
+.contOpciones{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    width: 250px;
+    border-radius: 12px;
+}
+
+.ventas{
+    background-color: #FFAB1E;
+}
+
+.compras{
+    background-color: #7FFF62;
+}
+
+.stock{
+    background-color: #BC62FF;
+}
+
+/* Estilos de Ventas.html */
+
+.conteinerVentas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteinerButtons,
+.tarjetaEfectivo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.formularioVentas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formularioVentasConteiner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.imgVentas{
+    margin-top: 15px;
+}
+
+.tituloVentas {
+    display: flex;
+    justify-content: center;
+}
+
+.ingresoDeVentas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.borrar{
+    background-color: #FE0404;
+}
+
+.opcionesCuotas{
+    display: flex;
+    flex-direction: row;
+}
+
+.opcionesCuotas input{
+    width: 20px;
+}
+
+.tituloCuotas{
+    margin: 20px auto;
+    font-size: 25px;
+}
+
+label{
+    font-family: 'Inter', sans-serif;
+    color: aliceblue;
+    font-size: 15px;
+}  
+
+.conteinerFormaDePago {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteinerDetalle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    width: 25em;
+    height: 200px;
+    background-color: #C1C1C1;
+    border-radius: 12px;
+}
+
+.conteinerDetalle h4, p{
+    color: #333333;
+    margin: 10px auto ;
+}
+
+.pDetalle {
+    color: #333333;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+.listaProductos li{
+    margin: 0 auto;
+    list-style: none;
+}
+
+.ingresoDeVentas form input[type=radio]{
+    margin: 0px 25px;
+    height: 25px;
+    width: 25px;
+}
+
+.conteinerCuotas{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.conteinerUno,
+.conteinerDos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.conteinerUno{
+    grid-area: "contUno";
+}
+
+.conteinerDos{
+    grid-area: "contDos";
+}
+
+/*   Estilos de Compras.html*/
+
+.conteinerCompras {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteinerCompras form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.formConteiner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.detalleProductosComprados{
+    width: 85%;
+    height: 100px;
+    background-color: #C1C1C1;
+}
+
+.botonCompras {
+        font-family: 'Inter', sans-serif;
+        font-weight: bolder;
+        background-color: #1E90FF;
+        color: aliceblue;
+        border-radius: 12px;
+        width: 250px;
+        height: 40px;
+    
+}

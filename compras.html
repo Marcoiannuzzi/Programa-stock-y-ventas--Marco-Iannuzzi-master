@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>Control de Stock y Ventas</title>
+</head>
+<body>
+    <div class="conteinerCompras">
+        <div class="imgVentas">
+            <a href="menu.html"><img src="./Imagenes/logo.png" alt=""></a> 
+        </div>
+
+        <div class="tituloVentas">
+            <h1>Compras</h1>
+        </div> 
+        <form id="formCompras">
+            <div class="formConteinerCompras">
+                <input type="text" id="codigoProductoComprado" placeholder="Ingrese el codigo del produto">
+                <input type="number" id="cantidadProdComprado" placeholder="Ingrese la cantidad comprada">
+            </div>
+            
+            <input type="submit" value="Cargar Producto" class="botonCompras" id="botonCompras">
+        </form>
+
+            <ul class= "listaProductosComprados" id="listaProductosComprados">
+
+            </ul>
+        
+
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/compras.js"></script>
+</body>
+</html>
