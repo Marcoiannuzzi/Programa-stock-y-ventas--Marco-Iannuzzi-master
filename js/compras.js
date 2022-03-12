@@ -15,13 +15,14 @@ formCompras.addEventListener("submit",(e)=>{
     const productoUser = arrayProductos.find(producto=> {
     return producto.codigo===codigoProductoComprado.value
     }) 
-
-    if(cantidadProdComprado.value=="" || cantidadProdComprado.value <= 0){
+    if (codigoProductoComprado.value=="") {
+        listaProductosComprados.innerHTML=`<li>No ingresaste código de producto</li>`
+    }else if(cantidadProdComprado.value=="" || cantidadProdComprado.value <= 0){
         listaProductosComprados.innerHTML=`<li>La cantidad comprada, no puede ser 0 o un valor negativo</li>`
     }else if (productoUser!=undefined) {   
     productoUser.cantidad = parseInt(productoUser.cantidad); 
     productoUser.cantidad += parseInt(cantidadProdComprado.value);
-    listaProductosComprados.innerHTML+=`<li> Se agregaron ${cantidadProdComprado.value} unidades del producto ${productoUser.descripcion} codigo ${productoUser.codigo}.</li>`
+    listaProductosComprados.innerHTML=`<li> Se agregaron ${cantidadProdComprado.value} unidades del producto ${productoUser.descripcion} codigo ${productoUser.codigo}.</li>`
     localStorage.setItem("Productos", JSON.stringify(arrayProductos))
     formCompras.reset()
     listaProductosComprados.innerHTML+=`<li>El Total en stock es de ${productoUser.cantidad}</li>`  
