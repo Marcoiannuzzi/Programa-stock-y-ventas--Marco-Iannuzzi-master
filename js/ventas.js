@@ -22,12 +22,13 @@ const formularioVentas = document.getElementById("formularioVentas")
 const arrayProductos = JSON.parse(localStorage.getItem("Productos")) || swal("Cuidado", "No hay productos Cargados en tu stock inicial", "warning");
 let sumatoria = 0;
 
-cantidadProducto.value=0
+// cantidadProducto.value=0
 
 // ----- funciones ----
 
 
-// Funcion para obtener el precio del producto por codigo y disminuir su stock por venta o si el usuario no conoce el codigo igual se le permite realizar una venta. La cual no infuira en el stock de mercaderias
+// Funcion para obtener el precio del producto por codigo y disminuir su stock por venta o si el usuario no conoce el codigo igual 
+// se le permite realizar una venta. La cual no influira en el stock de mercaderias
 
 
 formularioVentas.addEventListener("submit", (e)=>{
@@ -36,19 +37,19 @@ formularioVentas.addEventListener("submit", (e)=>{
     return producto.codigo===codigoProducto.value;
     })
     if (codigoProducto.value==""){
-        sumatoria+=(parseInt(precio.value)*parseInt(cantidadProducto.value)); 
-        psuma.innerHTML =`El total de la compra es de $${sumatoria}. A continuación seleccione la forma de pago.`
-        } else if (productoUser.cantidad>=cantidadProducto.value) { 
-            productoUser.cantidad = parseInt(productoUser.cantidad); 
-            productoUser.cantidad -= parseInt(cantidadProducto.value);
-            precio.value=parseInt(productoUser.precio) 
-            sumatoria+=parseInt(productoUser.precio)*parseInt(cantidadProducto.value);
-            psuma.innerHTML =`El total de la compra es de $${sumatoria}. A continuación seleccione la forma de pago.`
-            localStorage.setItem("Productos", JSON.stringify(arrayProductos))
-            formularioVentas.reset()
-            } else {
-               swal("Algo no anda bien", `Solo tienes ${productoUser.cantidad} unidedes para vender`, "error");
-            }
+      sumatoria+=(parseInt(precio.value)*parseInt(cantidadProducto.value)); 
+      psuma.innerHTML =`El total de la compra es de $${sumatoria}. A continuación seleccione la forma de pago.`
+   } else if (productoUser.cantidad>=cantidadProducto.value) { 
+      productoUser.cantidad = parseInt(productoUser.cantidad); 
+      productoUser.cantidad -= parseInt(cantidadProducto.value);
+      precio.value=parseInt(productoUser.precio) 
+      sumatoria+=parseInt(productoUser.precio)*parseInt(cantidadProducto.value);
+      psuma.innerHTML =`El total de la compra es de $${sumatoria}. A continuación seleccione la forma de pago.`
+      localStorage.setItem("Productos", JSON.stringify(arrayProductos))
+      formularioVentas.reset()
+      } else {
+         swal("Algo no anda bien", `Solo tienes ${productoUser.cantidad} unidedes para vender`, "error");
+      }
 })
 
 
@@ -67,13 +68,13 @@ codigoProducto.addEventListener("change", (e)=>{
 
 
   
-// ---- borra sumatoria de productos cargados
+// ---- borra sumatoria de productos cargados----
 
 botonBorrar.addEventListener(`click`, (e) =>{
     montoAPagar = []
     sumatoria=0
     formularioVentas.reset()
-    cantidadProducto.value=0
+   //  cantidadProducto.value=0
     psuma.innerHTML =`El total de la compra es de $${sumatoria}. `
  } )
 
