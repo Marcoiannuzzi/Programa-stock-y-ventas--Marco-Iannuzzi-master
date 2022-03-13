@@ -22,7 +22,7 @@ const formularioVentas = document.getElementById("formularioVentas")
 const arrayProductos = JSON.parse(localStorage.getItem("Productos")) || swal("Cuidado", "No hay productos Cargados en tu stock inicial", "warning");
 let sumatoria = 0;
 
-// cantidadProducto.value=0
+
 
 // ----- funciones ----
 
@@ -74,7 +74,6 @@ botonBorrar.addEventListener(`click`, (e) =>{
     montoAPagar = []
     sumatoria=0
     formularioVentas.reset()
-   //  cantidadProducto.value=0
     psuma.innerHTML =`El total de la compra es de $${sumatoria}. `
  } )
 
