@@ -104,6 +104,7 @@ finalizarBoton.addEventListener(`click`, (e) => {
 
 resetear.addEventListener("click", (e)=>{
    sumatoria=0
+   formularioVentas.reset()
    psuma.innerHTML =`ya puedes iniciar una nueva venta.`
    detalleFinal.innerHTML=""
    detalleFinalCuotas.innerHTML=""
