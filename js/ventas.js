@@ -1,14 +1,9 @@
 // -----  Variables  -----
 
-const detalleVentas = document.getElementById("detalleVentas");
 const codigoProducto = document.getElementById(`codigoProducto`);
 const precio = document.getElementById(`precio`);
 const psuma = document.getElementById(`psuma`);
-const conteinerDetalle = document.getElementById(`conteinerDetalle`);
-const ventasDiarias = document.getElementById("ventasDiarias");
 const botonBorrar = document.getElementById(`botonBorrar`);
-const totalVentas =document.getElementById(`totalVentas`);
-const botonContinuar = document.getElementById(`botonContinuar`);
 const efectivo = document.getElementById("efectivo");
 const tarjeta = document.getElementById("tarjeta");
 const tres = document.getElementById("tres");
@@ -18,7 +13,7 @@ const doce = document.getElementById("doce");
 const finalizarBoton = document.getElementById("finalizarBoton");
 const detalleFinal = document.getElementById("detalleFinal");
 const detalleFinalCuotas = document.getElementById("detalleFinalCuotas");
-const reset = document.getElementById("reset");
+const resetear = document.getElementById("resetear");
 const cantidadProducto = document.getElementById("cantidadProducto");
 const formularioVentas = document.getElementById("formularioVentas")
 
@@ -43,19 +38,17 @@ formularioVentas.addEventListener("submit", (e)=>{
     if (codigoProducto.value==""){
         sumatoria+=(parseInt(precio.value)*parseInt(cantidadProducto.value)); 
         psuma.innerHTML =`El total de la compra es de $${sumatoria}. A continuación seleccione la forma de pago.`
-        } else { 
+        } else if (productoUser.cantidad>=cantidadProducto.value) { 
             productoUser.cantidad = parseInt(productoUser.cantidad); 
             productoUser.cantidad -= parseInt(cantidadProducto.value);
-            if (productoUser.cantidad<=0){
-               productoUser.cantidad=0
-               swal("Algo no anda bien", "ya no te quedan unidades para vender", "error");
-            }
             precio.value=parseInt(productoUser.precio) 
             sumatoria+=parseInt(productoUser.precio)*parseInt(cantidadProducto.value);
             psuma.innerHTML =`El total de la compra es de $${sumatoria}. A continuación seleccione la forma de pago.`
             localStorage.setItem("Productos", JSON.stringify(arrayProductos))
             formularioVentas.reset()
-            } 
+            } else {
+               swal("Algo no anda bien", `Solo tienes ${productoUser.cantidad} unidedes para vender`, "error");
+            }
 })
 
 
@@ -63,7 +56,13 @@ codigoProducto.addEventListener("change", (e)=>{
    const productoUser = arrayProductos.find(producto=> {
       return producto.codigo===codigoProducto.value
    })
+   if (productoUser!=undefined){
+      psuma.innerHTML = `Tienes ${productoUser.cantidad} unidades de este producto`
       precio.value=parseInt(productoUser.precio)
+   } else {
+      psuma.innerHTML =`El codigo ingresado no corresponede a ningun producto en stock.`
+   }
+      
 })
 
 
@@ -85,6 +84,7 @@ finalizarBoton.addEventListener(`click`, (e) => {
     e.preventDefault()
     if (efectivo.checked) {
         detalleFinal.innerHTML=`El pago en efectivo tiene un 10% de descuento. El total es $${Math.round(sumatoria*0.9)}`
+        detalleFinalCuotas.innerHTML=""
     } else if(tarjeta.checked) {
         detalleFinal.innerHTML=`Seleccionaste Tarjeta, dependiendo de la cantidad de cuotas varian los interes`
          if (tres.checked) {
@@ -102,8 +102,11 @@ finalizarBoton.addEventListener(`click`, (e) => {
 
 // ----- Reset
 
-reset.addEventListener("click", (e)=>{
-   location.reload();
+resetear.addEventListener("click", (e)=>{
+   sumatoria=0
+   psuma.innerHTML =`ya puedes iniciar una nueva venta.`
+   detalleFinal.innerHTML=""
+   detalleFinalCuotas.innerHTML=""
 })
 
 

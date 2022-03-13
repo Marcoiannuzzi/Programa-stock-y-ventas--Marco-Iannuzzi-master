@@ -57,7 +57,6 @@ codigoProductoStock.addEventListener("change", (e)=>{
                    swal("Atencion!", `El Codigo: "${codigoProductoStock.value}" ya fue asignado a un producto, ingrese un nuevo código`, "warning");
                }
             })
-            
          })
 
 
