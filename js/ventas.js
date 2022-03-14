@@ -27,8 +27,9 @@ let sumatoria = 0;
 // ----- funciones ----
 
 
-// Funcion para obtener el precio del producto por codigo y disminuir su stock por venta o si el usuario no conoce el codigo igual 
-// se le permite realizar una venta. La cual no influira en el stock de mercaderias
+// Funcion para obtener el precio del producto por codigo y disminuir su stock por venta. Si el usuario no conoce el codigo igual 
+// se le permite realizar una venta, la cual no influira en el stock de mercaderias. El ingreso negativo en la cantidad se utiliza 
+// para cargar una devolucion de mercaderia
 
 
 formularioVentas.addEventListener("submit", (e)=>{
